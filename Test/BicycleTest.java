@@ -1,54 +1,55 @@
 import bicycles.Bicycle;
 import bicycles.model.MountainBike;
+import bicycles.model.RoadBike;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
         public class BicycleTest{
             /*................................Mountain Bicycle Test...................................................*/
             @Test
-            public void shouldBeAbleToAccelerate(){
-                Bicycle mountainBike = new MountainBike();
-                 mountainBike.accelerate();
-                assertEquals( 5, mountainBike.currentSpeed(), "when accelerated +5.");
+            public void roadBikeAccelerate(){
+                Bicycle roadBike = new RoadBike();
+                 roadBike.accelerate();
+                assertEquals( 11, roadBike.currentSpeed(), "when accelerated +11.");
             }
 
             @Test
-            public void shouldBeAbleToBrake(){
-                Bicycle mountainBike = new MountainBike();
-                mountainBike.accelerate();
-                mountainBike.accelerate();
-                mountainBike.brake();
-                mountainBike.brake();
-                 assertEquals(4,mountainBike.currentSpeed(), "current speed should decrease with 3, when brake is applied");
+            public void roadBikeBrake(){
+                Bicycle roadBike = new RoadBike();
+                roadBike.accelerate();
+                roadBike.accelerate();
+                roadBike.brake();
+                roadBike.brake();
+                 assertEquals(14,roadBike.currentSpeed(), "current speed should decrease with 4, when brake is applied");
             }
 
             @Test
-            public void shouldBeAbleToCheckCurrentSpeed(){
-               Bicycle mountainBike = new MountainBike();
-               mountainBike.accelerate();
-                mountainBike.accelerate();
-                mountainBike.accelerate();
-                mountainBike.brake();
-                assertEquals(12,mountainBike.currentSpeed(), "always output the correct current speed.");
+            public void roadBikeCurrentSpeed(){
+               Bicycle roadBike = new RoadBike();
+               roadBike.accelerate();
+                roadBike.accelerate();
+                roadBike.accelerate();
+                roadBike.brake();
+                assertEquals(29,roadBike.currentSpeed(), "always output the correct current speed.");
             }
             @Test
-            public void shouldBeAbleToMakeACompleteStop(){
-              Bicycle mountainBike = new MountainBike();
-                mountainBike.accelerate();
-                mountainBike.stop();
-                assertEquals(0,mountainBike.currentSpeed());
+            public void roadBikeCompleteStop(){
+              Bicycle roadBike = new RoadBike();
+                roadBike.accelerate();
+                roadBike.stop();
+                assertEquals(0,roadBike.currentSpeed());
             }
 /************************************************************************************************************************/
-            /*................................Road Bicycle Test...................................................*/
+            /*................................Mountain Bicycle Test...................................................*/
             @Test
-            public void shouldBeAbleToAccelerate(){
+            public void mountainBikeAccelerate(){
                 Bicycle mountainBike = new MountainBike();
                 mountainBike.accelerate();
                 assertEquals( 5, mountainBike.currentSpeed(), "when accelerated +5.");
             }
             
                         @Test
-                        public void shouldBeAbleToBrake(){
+                        public void mountainBikeBrake(){
                             Bicycle mountainBike = new MountainBike();
                             mountainBike.accelerate();
                             mountainBike.accelerate();
@@ -58,7 +59,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
                         }
             
                         @Test
-                        public void shouldBeAbleToCheckCurrentSpeed(){
+                        public void mountainBikeCurrentSpeed(){
                             Bicycle mountainBike = new MountainBike();
                             mountainBike.accelerate();
                             mountainBike.accelerate();
@@ -67,7 +68,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
                             assertEquals(12,mountainBike.currentSpeed(), "always output the correct current speed.");
                         }
                         @Test
-                        public void shouldBeAbleToMakeACompleteStop(){
+                        public void mountainBikeStop(){
                             Bicycle mountainBike = new MountainBike();
                             mountainBike.accelerate();
                             mountainBike.stop();

@@ -1,7 +1,8 @@
 package bicycles.model;
 import bicycles.Bicycle;
+import bicycles.BicycleBase;
 
-public class MountainBike implements Bicycle {
+public class MountainBike extends BicycleBase {
     private int speed = 0;
     @Override
     public void accelerate() {
