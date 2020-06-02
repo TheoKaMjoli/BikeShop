@@ -1,5 +1,5 @@
 package bicycles;
-public class bicycleClass1 {
+public class BicycleClass1 {
     private int speed = 0;
     public void accelerate() {
         this.speed += 5;

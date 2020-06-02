@@ -1,5 +1,4 @@
 package bicycles.model;
-import bicycles.Bicycle;
 import bicycles.BicycleBase;
 
 public class RoadBike extends BicycleBase {
