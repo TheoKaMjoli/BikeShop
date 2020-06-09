@@ -1,4 +1,5 @@
 import bicycles.Bicycle;
+import bicycles.BicycleBase;
 import bicycles.BicycleClass1;
 import bicycles.BikeRide;
 import bicycles.model.BikeRideOne;
@@ -14,10 +15,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class BikeRideTest{
     @Test
 public void bikeRidTest(){
+
+            BikeRideOne bikeRideOne = new BikeRideOne();
+            RoadBike roadBike = new RoadBike();
             MountainBike mountainBike = new MountainBike();
-            BikeRideOne bikeRideOne = new BikeRideOne(mountainBike);
-            bikeRideOne.ride();
-            assertEquals(14, mountainBike.currentSpeed());
+            bikeRideOne.ride(roadBike);
+            assertEquals(36, roadBike.currentSpeed());
         }
 
 /*................................Mountain Bicycle Test...................................................*/
@@ -69,7 +72,7 @@ public void mountainBikeBrake(){
         mountainBike.accelerate();
         mountainBike.accelerate();
         mountainBike.brake();
-        assertEquals(4,mountainBike.currentSpeed(),"current speed should decrease with 3, when brake is applied");
+        assertEquals(7,mountainBike.currentSpeed(),"current speed should decrease with 3, when brake is applied");
         }
 
 @Test
