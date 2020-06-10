@@ -4,4 +4,5 @@ package bicycles;
           void brake();
           int currentSpeed();
           void stop();
+          void getBicycleType();
     }

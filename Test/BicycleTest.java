@@ -2,10 +2,7 @@ import bicycles.Bicycle;
 import bicycles.BicycleBase;
 import bicycles.BicycleClass1;
 import bicycles.BikeRide;
-import bicycles.model.BikeRideOne;
-import bicycles.model.MountainBike;
-import bicycles.model.RoadBike;
-import bicycles.model.Tandem;
+import bicycles.model.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -15,12 +12,25 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class BikeRideTest{
     @Test
 public void bikeRidTest(){
-
             BikeRideOne bikeRideOne = new BikeRideOne();
             RoadBike roadBike = new RoadBike();
-            MountainBike mountainBike = new MountainBike();
             bikeRideOne.ride(roadBike);
             assertEquals(36, roadBike.currentSpeed());
+        }
+
+        @Test
+        public void bikeRidTest2(){
+                BikeRideTwo bikeRideTwo = new BikeRideTwo();
+                RoadBike roadBike = new RoadBike();
+                bikeRideTwo.ride(roadBike);
+                assertEquals(29, roadBike.currentSpeed());
+        }
+        @Test
+        public void BikeRide3(){
+            BikeRide3 bikeRide3 = new BikeRide3();
+                MountainBike mountainBike = new MountainBike();
+                bikeRide3.ride(mountainBike);
+                assertEquals(12, mountainBike.currentSpeed());
         }
 
 /*................................Mountain Bicycle Test...................................................*/
@@ -97,7 +107,7 @@ public void mountainBikeStop(){
 @Test
 public void tandemBikeTest(){
         //I have decided to test all methods in one testMethod
-        Bicycle tandem=new Tandem();
+        Bicycle tandem = new Tandem();
         tandem.accelerate();
         tandem.brake();
         tandem.stop();

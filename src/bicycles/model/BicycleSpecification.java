@@ -1,16 +1,19 @@
 package bicycles.model;
 
- class BicycleSpecification {
+enum BicycleType {RoadBike, MountainBike, Tandem }
+class BicycleSpecification {
 private int accelerationSpeed;
-// add a variable for brakeSpeed
+private int brakeSpeed;
+private BicycleType bicycleType;
 
-public BicycleSpecification(int accelerationSpeed, int brakeSpeed) {
+public BicycleSpecification(int accelerationSpeed, int brakeSpeed, BicycleType bicycleType) {
         this.accelerationSpeed = accelerationSpeed;
-        // initialize brakeSpeed private variable
+        this.brakeSpeed = brakeSpeed;
+        this.bicycleType = bicycleType;
         }
+        public int getAccelerationSpeed(){ return accelerationSpeed;}
 
-public int getAccelerationSpeed(){
-        return accelerationSpeed;
-        }
-        // add getters for brakeSpeed
-        }
+        public int getBrakeSpeed(){ return brakeSpeed;}
+        public Enum<BicycleType> getBicycleType(){return bicycleType;} //I dont know whats Klaaping here
+        /*public BicycleType getBicycleType() { return bicycleType;}*/
+}
