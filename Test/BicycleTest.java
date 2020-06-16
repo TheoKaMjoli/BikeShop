@@ -1,6 +1,4 @@
 import bicycles.Bicycle;
-import bicycles.BicycleBase;
-import bicycles.BicycleClass1;
 import bicycles.BikeRide;
 import bicycles.model.*;
 import org.junit.jupiter.api.Test;
@@ -27,7 +25,7 @@ public void bikeRidTest(){
         }
         @Test
         public void BikeRide3(){
-            BikeRide3 bikeRide3 = new BikeRide3();
+            BikeRideThree bikeRide3 = new BikeRideThree();
                 MountainBike mountainBike = new MountainBike();
                 bikeRide3.ride(mountainBike);
                 assertEquals(12, mountainBike.currentSpeed());
@@ -113,5 +111,42 @@ public void tandemBikeTest(){
         tandem.stop();
         assertEquals(0,tandem.currentSpeed());
         }
+
+/*******************************************BikeRide Test****************************************************************************/
+
+        @Test
+        public void bikeRideOneTest(){
+                BikeRideOne bikeRideOne = new BikeRideOne();
+                MountainBike mountainBike = new MountainBike();
+                bikeRideOne.ride(mountainBike);
+                bikeRideOne.ride(mountainBike);
+                assertEquals(28, mountainBike.currentSpeed());
+        }
+        @Test
+        public void bikeRideTwoTest(){
+                BikeRideOne bikeRideOne = new BikeRideOne();
+                RoadBike roadBike = new RoadBike();
+                bikeRideOne.ride(roadBike);
+                bikeRideOne.ride(roadBike);
+                assertEquals(72, roadBike.currentSpeed());
+        }
+        @Test
+        public void bikeRideThreeTest(){
+               Tandem tandem = new Tandem();
+                BikeRideThree bikeRideThree = new BikeRideThree();
+                bikeRideThree.ride(tandem);
+                bikeRideThree.ride(tandem);
+                assertEquals(58, tandem.currentSpeed());
+        }
+        /*************************************************Bicycle Specification******************************************/
+        @Test
+        public void bikeSpecTest(){
+                MountainBike mountainBike = new MountainBike();
+                BikeRideOne bikeRideOne = new BikeRideOne();
+                BicycleSpecification bikeSpec = new BicycleSpecification(5, 3, );
+               // bikeSpec.mountai();
+                assertEquals(5,bikeSpec.getBrakeSpeed());
         }
 
+
+}

@@ -5,7 +5,7 @@ import bicycles.BikeRide;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class BikeRide3 implements BikeRide {
+public class BikeRideThree implements BikeRide {
     protected Bicycle bicycle;
     public void ride(Bicycle bicycle) {
         bicycle.accelerate();
