@@ -4,44 +4,19 @@ import bicycles.model.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-       /* public class BicycleTest{
-            /*................................Bike Ride...................................................*/
-
 class BikeRideTest{
-    @Test
-public void bikeRidTest(){
-            BikeRideOne bikeRideOne = new BikeRideOne();
-            RoadBike roadBike = new RoadBike();
-            bikeRideOne.ride(roadBike);
-            assertEquals(36, roadBike.currentSpeed());
-        }
 
-        @Test
-        public void bikeRidTest2(){
-                BikeRideTwo bikeRideTwo = new BikeRideTwo();
-                RoadBike roadBike = new RoadBike();
-                bikeRideTwo.ride(roadBike);
-                assertEquals(29, roadBike.currentSpeed());
-        }
-        @Test
-        public void BikeRide3(){
-            BikeRideThree bikeRide3 = new BikeRideThree();
-                MountainBike mountainBike = new MountainBike();
-                bikeRide3.ride(mountainBike);
-                assertEquals(12, mountainBike.currentSpeed());
-        }
-
-/*................................Mountain Bicycle Test...................................................*/
+/*................................RoadBike Bicycle Test...................................................*/
 @Test
-public void roadBikeAccelerate(){
-        Bicycle roadBike = new RoadBike();
+public void shouldAccelerate(){
+        RoadBike roadBike = new RoadBike();
         roadBike.accelerate();
         assertEquals(11,roadBike.currentSpeed(),"when accelerated +11.");
-        }
 
+        }
 @Test
 public void roadBikeBrake(){
-        Bicycle roadBike=new RoadBike();
+        Bicycle roadBike = new RoadBike();
         roadBike.accelerate();
         roadBike.accelerate();
         roadBike.brake();
@@ -56,11 +31,12 @@ public void roadBikeCurrentSpeed(){
         roadBike.accelerate();
         roadBike.accelerate();
         roadBike.brake();
-        assertEquals(29,roadBike.currentSpeed(),"always output the correct current speed.");
+        assertEquals(29,roadBike.currentSpeed(),"always output the current speed.");
         }
+
 @Test
 public void roadBikeCompleteStop(){
-        Bicycle roadBike=new RoadBike();
+        Bicycle roadBike = new RoadBike();
         roadBike.accelerate();
         roadBike.stop();
         assertEquals(0,roadBike.currentSpeed());
@@ -73,7 +49,6 @@ public void mountainBikeAccelerate(){
         mountainBike.accelerate();
         assertEquals(5,mountainBike.currentSpeed(),"when accelerated +5.");
         }
-
 @Test
 public void mountainBikeBrake(){
         Bicycle mountainBike=new MountainBike();
@@ -82,7 +57,6 @@ public void mountainBikeBrake(){
         mountainBike.brake();
         assertEquals(7,mountainBike.currentSpeed(),"current speed should decrease with 3, when brake is applied");
         }
-
 @Test
 public void mountainBikeCurrentSpeed(){
         Bicycle mountainBike = new MountainBike();
@@ -107,9 +81,31 @@ public void tandemBikeTest(){
         //I have decided to test all methods in one testMethod
         Bicycle tandem = new Tandem();
         tandem.accelerate();
-        tandem.brake();
-        tandem.stop();
-        assertEquals(0,tandem.currentSpeed());
+        assertEquals(12,tandem.currentSpeed(),"when accelerated once the speed should == 12");
+        }
+        @Test
+        public void tandemBikeBrake(){
+                Bicycle tandem = new Tandem();
+                tandem.accelerate();
+                tandem.accelerate();
+                tandem.brake();
+                assertEquals(17,tandem.currentSpeed(),"current speed should decrease with 7, when brake is applied");
+        }
+        @Test
+        public void tandemBikeCurrentSpeed(){
+                Bicycle tandem = new Tandem();
+                tandem.accelerate();
+                tandem.accelerate();
+                tandem.accelerate();
+                tandem.brake();
+                assertEquals(12,tandem.currentSpeed(),"always output the correct current speed.");
+        }
+        @Test
+        public void tandemBikeStop(){
+                Bicycle tandem = new Tandem();
+                tandem.accelerate();
+                tandem.stop();
+                assertEquals(0,tandem.currentSpeed());
         }
 
 /*******************************************BikeRide Test****************************************************************************/
@@ -143,9 +139,9 @@ public void tandemBikeTest(){
         public void bikeSpecTest(){
                 MountainBike mountainBike = new MountainBike();
                 BikeRideOne bikeRideOne = new BikeRideOne();
-                BicycleSpecification bikeSpec = new BicycleSpecification(5, 3, );
+              //  BicycleSpecification bikeSpec = new BicycleSpecification(5, 3, );
                // bikeSpec.mountai();
-                assertEquals(5,bikeSpec.getBrakeSpeed());
+              //s  assertEquals(5,bikeSpec.getBrakeSpeed());
         }
 
 

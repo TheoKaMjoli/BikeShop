@@ -2,7 +2,6 @@ package bicycles.model;
 
 import bicycles.Bicycle;
 
-enum BicycleType {RoadBike, MountainBike, Tandem } //Enum
 public class BicycleSpecification {
 private int accelerationSpeed;
 private int brakeSpeed;

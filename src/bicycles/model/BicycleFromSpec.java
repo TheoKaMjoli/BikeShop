@@ -2,7 +2,7 @@ package bicycles.model;
 import bicycles.Bicycle;
 import bicycles.BicycleBase;
 
-public class BicycleFromSpec extends BicycleBase {
+public class BicycleFromSpec extends BicycleBase implements Bicycle {
     private BicycleSpecification bicycleSpecification;
     BicycleFromSpec(BicycleSpecification bicycleSpecification) {
         this.bicycleSpecification = bicycleSpecification;
@@ -17,9 +17,7 @@ public class BicycleFromSpec extends BicycleBase {
     public void brake() {
         changeSpeed(bicycleSpecification.getBrakeSpeed());
     }
-
-    @Override
-    public void getBicycleType() {
-
+    public BicycleType getBicycleType() {
+        return getBicycleType();
     }
 }

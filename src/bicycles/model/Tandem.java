@@ -13,10 +13,8 @@ public class Tandem extends BicycleBase {
         changeSpeed(-7);
     }
 
-   @Override
+   /*@Override
     public void getBicycleType() {
 
-    }
-
-
+    }*/
 }
